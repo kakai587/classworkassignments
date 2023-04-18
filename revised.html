@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inheritance in Action</title>
+  </head>
+  <body>
+    <script>
+      class Parent {
+        #name;
+        #age;
+        #gender;
+        constructor(name, age, gender) {
+          this.#name = name;
+          this.#age = age;
+          this.#gender = gender;
+        }
+        details() {
+          console.log(
+            `You are ${this.#name}, ${this.#age} years old, and ${
+              this.#gender
+            }.`
+          );
+        }
+      }
+
+      class Student extends Parent {
+        #grade;
+        #year;
+        constructor(name, age, gender, grade, year) {
+          super(name, age, gender);
+          this.#grade = grade;
+          this.#year = year;
+        }
+        studentDetails() {
+          super.details();
+          console.log(
+            `Your grade is ${this.#grade} and finished in ${this.#year}.`
+          );
+        }
+      }
+
+      class Teacher extends Parent {
+        #teach;
+        #salary;
+        constructor(name, age, gender, teach, salary) {
+          super(name, age, gender);
+          this.#teach = teach;
+          this.#salary = salary;
+        }
+        teacherDetails() {
+          super.details();
+          console.log(
+            `You teach ${this.#teach} and your salary is ${this.#salary}.`
+          );
+        }
+      }
+
+      class Doctor extends Parent {
+        #checkup;
+        #prescription;
+        constructor(name, age, gender, checkup, prescription) {
+          super(name, age, gender);
+          this.#checkup = checkup;
+          this.#prescription = prescription;
+        }
+        doctorDetails() {
+          super.details();
+          console.log(
+            `You did 5 ${this.#checkup} and prescribed ${this.#prescription}.`
+          );
+        }
+      }
+
+      let kakai = new Student("Kakai", 25, "male", "A", 2023);
+      let makHanda = new Teacher("Mak-handa", 50, "male", "teach", "9450");
+      let me = new Doctor("Correy", 30, "female", "checkups", "pediatric");
+
+      kakai.studentDetails();
+      makHanda.teacherDetails();
+      me.doctorDetails();
+    </script>
+  </body>
+</html>
