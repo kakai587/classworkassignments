@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Parent {
+        #name;
+        #age;
+        #gender;
+        #eat;
+        #walk;
+        constructor(name, age, gender, eat, walk) {
+          this.#name = name;
+          this.#age = age;
+          this.#gender = gender;
+          this.#eat = eat;
+          this.#walk = walk;
+        }
+        details() {
+          console.log(
+            `You are ${this.#name}, ${this.#age} years old, your gender is ${
+              this.#gender
+            }, you are eating ${this.#eat} and you are walking ${
+              this.#walk
+            } per hour.`
+          );
+        }
+      }
+
+      class Student extends Parent {
+        #program;
+        #studyyear;
+        #heldexam;
+        constructor(
+          name,
+          age,
+          gender,
+          eat,
+          walk,
+          program,
+          studyyear,
+          heldexam
+        ) {
+          super(name, age, gender, eat, walk);
+          this.#program = program;
+          this.#studyyear = studyyear;
+          this.#heldexam = heldexam;
+        }
+        studentDetails() {
+          super.details();
+          console.log(
+            `Your program is ${this.#program} in this study year  ${
+              this.#studyyear
+            } and held exam on ${this.#heldexam}.`
+          );
+        }
+      }
+
+      class Teacher extends Parent {
+        #teach;
+        #salary;
+        constructor(name, age, gender, eat, walk, teach, salary) {
+          super(name, age, gender, eat, walk);
+          this.#teach = teach;
+          this.#salary = salary;
+        }
+        teacherDetails() {
+          super.details();
+          console.log(
+            `You teach ${this.#teach} and your salary is ${this.#salary}.`
+          );
+        }
+      }
+
+      class Doctor extends Parent {
+        #checkup;
+        #prescription;
+        #designation;
+        #salary;
+        constructor(
+          name,
+          age,
+          gender,
+          eat,
+          walk,
+          checkup,
+          prescription,
+          designation,
+          salary
+        ) {
+          super(name, age, gender, eat, walk);
+          this.#checkup = checkup;
+          this.#prescription = prescription;
+          this.#designation = designation;
+          this.#salary = salary;
+        }
+        doctorDetails() {
+          super.details();
+          console.log(
+            `You did ${this.#checkup} and prescribed ${
+              this.#prescription
+            } and you were designated ${this.#designation} whose salary is ${
+              this.#salary
+            }.`
+          );
+        }
+      }
+
+      let kakai = new Student(
+        "Kakai",
+        22,
+        "male",
+        "chapati",
+        "20km/h",
+        "BSCM",
+        2024,
+        "SEPTEMBER"
+      );
+      let makHanda = new Teacher(
+        "Mak-handa",
+        50,
+        "male",
+        "rice",
+        "3km/h",
+        "education",
+        100000
+      );
+      let tameem = new Doctor(
+        "Correy",
+        30,
+        "female",
+        "beans",
+        "40km/h",
+
+        "bloodtest",
+        "antibiotics",
+        "chief medical officer",
+        150000
+      );
+
+      kakai.studentDetails();
+      makHanda.teacherDetails();
+      tameem.doctorDetails();
+    </script>
+  </body>
+</html>
