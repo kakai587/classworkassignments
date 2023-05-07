@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Parent {
+        constructor(name, age, gender, eat, walk) {
+          let _name = name;
+          let _age = age;
+          let _gender = gender;
+          let _eat = eat;
+          let _walk = walk;
+
+          this.getName = function () {
+            return _name;
+          };
+
+          this.getAge = function () {
+            return _age;
+          };
+
+          this.getGender = function () {
+            return _gender;
+          };
+
+          this.getEat = function () {
+            return _eat;
+          };
+
+          this.getWalk = function () {
+            return _walk;
+          };
+        }
+      }
+
+      class ChildrenStudent extends Parent {
+        constructor(
+          name,
+          age,
+          gender,
+          eat,
+          walk,
+          program,
+          study_year,
+          study,
+          held_exam
+        ) {
+          super(name, age, gender, eat, walk);
+
+          let _program = program;
+          let _study_year = study_year;
+          let _study = study;
+          let _held_exam = held_exam;
+
+          this.getProgram = function () {
+            return _program;
+          };
+
+          this.getStudyYear = function () {
+            return _study_year;
+          };
+
+          this.getStudy = function () {
+            return _study;
+          };
+
+          this.getHeldExam = function () {
+            return _held_exam;
+          };
+        }
+      }
+
+      class Teacher extends Parent {
+        constructor(
+          name,
+          age,
+          gender,
+          eat,
+          walk,
+          designation,
+          salary,
+          checkup,
+          take_exam
+        ) {
+          super(name, age, gender, eat, walk);
+
+          let _designation = designation;
+          let _salary = salary;
+          let _checkup = checkup;
+          let _take_exam = take_exam;
+
+          this.getDesignation = function () {
+            return _designation;
+          };
+
+          this.getSalary = function () {
+            return _salary;
+          };
+
+          this.getCheckup = function () {
+            return _checkup;
+          };
+
+          this.getTakeExam = function () {
+            return _take_exam;
+          };
+        }
+      }
+
+      class Doctor extends Parent {
+        constructor(
+          name,
+          age,
+          gender,
+          eat,
+          walk,
+          designation,
+          salary,
+          checkup,
+          prescribe
+        ) {
+          super(name, age, gender, eat, walk);
+
+          let _designation = designation;
+          let _salary = salary;
+          let _checkup = checkup;
+          let _prescribe = prescribe;
+
+          this.getDesignation = function () {
+            return _designation;
+          };
+
+          this.getSalary = function () {
+            return _salary;
+          };
+
+          this.getCheckup = function () {
+            return _checkup;
+          };
+
+          this.getPrescribe = function () {
+            return _prescribe;
+          };
+        }
+      }
+
+      const parent1 = new Parent("kakai", 40, "male", true, false);
+      const student1 = new ChildrenStudent(
+        "kakai",
+        10,
+        "male",
+        true,
+        true,
+        "Math",
+        5,
+        true,
+        false
+      );
+      const teacher1 = new Teacher(
+        "Mak-Handa",
+        35,
+        "male",
+        true,
+        false,
+        "Math Teacher",
+        50000,
+        true,
+        true
+      );
+      const doctor1 = new Doctor(
+        "Adriana Martinelli",
+        50,
+        "female",
+        true,
+        true,
+        "Pediatrician",
+        100000,
+        true,
+        true
+      );
+
+      console.log(parent);
+    </script>
+  </body>
+</html>

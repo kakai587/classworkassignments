@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Bank {
+        #accountName;
+        #accountNumber;
+        #balance;
+
+        constructor(accountName, accountNumber, balance) {
+          this.#accountName = accountName;
+          this.#accountNumber = accountNumber;
+          this.#balance = balance;
+        }
+
+        deposit(amount) {
+          this.#balance += amount;
+        }
+
+        withdraw(amount) {
+          if (amount > this.#balance) {
+            console.log("Insufficient funds in your account");
+          } else {
+            this.#balance -= amount;
+          }
+        }
+
+        checkBalance() {
+          console.log(
+            `Account Name: ${this.#accountName} \n Account Number: ${
+              this.#accountNumber
+            } \n Balance: ${this.#balance}`
+          );
+        }
+      }
+
+      const account1 = new Bank("DancanPlex", "0222588649", 5000);
+      account1.checkBalance();
+
+      account1.deposit(6000);
+      account1.checkBalance();
+
+      account1.withdraw(2000);
+      account1.checkBalance();
+
+      account1.withdraw(20000);
+    </script>
+  </body>
+</html>

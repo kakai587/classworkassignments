@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        #name;
+        #age;
+        #gender;
+
+        constructor(name, age, gender) {
+          this.#name = name;
+          this.#age = age;
+          this.#gender = gender;
+        }
+
+        set name(name) {
+          this.#name = name;
+        }
+
+        set age(val) {
+          this.#age = val;
+        }
+        set gender(val) {
+          this.#age = val;
+        }
+
+        get eat() {
+          console.log(`${this.#name} is eating.`);
+        }
+
+        get walk() {
+          console.log(`${this.#name} is walking.`);
+        }
+      }
+
+      class Student extends Person {
+        #program;
+        #study;
+
+        constructor(name, age, program, study) {
+          super(name, age);
+          this.#program = program;
+          this.#study = study;
+        }
+        set program(val) {
+          this.#program = val;
+        }
+        set studyyear(val) {
+          this.#studyyear = val;
+        }
+
+        get heldExam() {
+          console.log(
+            `${this.name} is sitting an exam. your age is ${
+              this.val
+            } and program is ${this.#program}`
+          );
+        }
+      }
+      X = new Student("Dan", 21, "software", "css");
+      X.walk;
+
+      class Teacher extends Person {
+        #designation;
+        #salary;
+
+        constructor(name, age, salary, designation) {
+          super(name, age);
+          this.#designation = designation;
+          this.#salary = salary;
+        }
+
+        get takeExam() {
+          console.log(`${this.val} is taking an exam.`);
+        }
+
+        get teach() {
+          console.log(`${this.val} is teaching.`);
+        }
+      }
+      y = new Teacher("Teacher Ramona", 26, "5000", "cybersec");
+      y.walk;
+
+      class Doctor extends Person {
+        #salary;
+        #designation;
+
+        constructor(name, age, salary, designation) {
+          super(name, age);
+          this.#salary = salary;
+          this.#designation = designation;
+        }
+        get prescribe() {
+          console.log(`${this.val} can prescribe.`);
+        }
+        get checkup() {
+          console.log(`${this.val} can give a checkup .`);
+        }
+      }
+      y = new Doctor("Doctor Tamewem", 46, "7300", "pedeatric");
+      y.walk;
+    </script>
+  </body>
+</html>

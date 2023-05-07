@@ -30,7 +30,7 @@ class KAKBank {
   const KAKBANK = new KAKBank(100000, "KAKBANK", "1234567890");
   KAKBANK.checkBalance(); 
   KAKBANK.deposit(56500); 
-  KAKBANK.withdraw(2200); 
+  KAKBANK.withdroaw(2200); 
   KAKBANK.checkBalance(); 
   KAKBANK.withdraw(160000); 
   
